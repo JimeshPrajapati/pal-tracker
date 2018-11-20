@@ -13,6 +13,11 @@ public class TimeEntryController {
     //@Autowired
     TimeEntryRepository timeRepo;
 
+    public TimeEntryController(TimeEntryRepository timeRepo)
+    {
+        this.timeRepo=timeRepo;
+    }
+
     @GetMapping
     public ResponseEntity<List<TimeEntry>> list()
     {
@@ -30,10 +35,6 @@ public class TimeEntryController {
         return new ResponseEntity<>(timeEntry,HttpStatus.OK);
     }
 
-    public TimeEntryController(TimeEntryRepository timeRepo)
-    {
-        this.timeRepo=timeRepo;
-    }
 
     @PostMapping
     public ResponseEntity<TimeEntry> create(@RequestBody TimeEntry timeEntry)
