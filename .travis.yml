@@ -13,6 +13,10 @@ jobs:
       language: java
       jdk: openjdk11
       install: true
+      before_install:
+        - pwd
+        - ls -la
+        - chmod +x /.gradlew
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
