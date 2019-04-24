@@ -16,7 +16,7 @@ jobs:
       before_script:
         - pwd
         - ls -la
-        - chmod +x /.gradlew
+        - chmod +x ./gradlew
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
