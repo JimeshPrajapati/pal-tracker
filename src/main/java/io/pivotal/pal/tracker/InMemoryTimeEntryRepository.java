@@ -39,7 +39,9 @@ public class InMemoryTimeEntryRepository implements  TimeEntryRepository{
                 timeEntry.getDate(),
                 timeEntry.getHours()
         );
+
         int index = timeEntriesDB.indexOf(find(id));
+        timeEntriesDB.remove(timeEntriesDB.get(index));
         timeEntriesDB.add(index,updatedEntry);
         return timeEntriesDB.get(index);
     }
