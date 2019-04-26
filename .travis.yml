@@ -15,7 +15,7 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
-        - chmod +x ./gradlew
+        - chmod +x gradlew
         - chmod +x scripts/migrate-databases.sh
         - chmod +x databases/tracker/create_databases.sql
         - mysql -uroot < databases/tracker/create_databases.sql
